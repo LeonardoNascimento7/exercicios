@@ -1,0 +1,10 @@
+/* Leonardo Lopes do Nascimento */
+
+#preview {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .preview-item {
+    margin: 10px;
+  }

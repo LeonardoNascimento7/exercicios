@@ -1,0 +1,42 @@
+<!-- Leonardo Lopes do Nascimento -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10</title>
+    <link rel="stylesheet" href="10.css">
+</head>
+<body>
+    <button id="openModalBtn">Clique aqui</button>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <p>Bem - Vindo!</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("modal");
+            var openModalBtn = document.getElementById("openModalBtn");
+            var closeModalBtn = document.getElementById("closeModalBtn");
+
+            openModalBtn.addEventListener('click', function() {
+                modal.style.display = "block";
+            });
+
+            closeModalBtn.addEventListener('click', function() {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

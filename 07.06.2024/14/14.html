@@ -1,0 +1,68 @@
+<!-- Leonardo Lopes do Nascimento -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens com Filtro</title>
+    <link rel="stylesheet" href="14.css">
+</head>
+<body>
+    <div class="filter-buttons">
+        <button onclick="filterGallery('all')">Todos</button>
+        <button onclick="filterGallery('nature')">Natureza</button>
+        <button onclick="filterGallery('city')">Cidade</button>
+        <button onclick="filterGallery('animals')">Animais</button>
+    </div>
+    <div class="gallery">
+        <div class="gallery-item nature">
+            <img src="./img/natureza1.png" alt="Natureza 1">
+        </div>
+        <div class="gallery-item city">
+            <img src="./img/cidade1.png" alt="Cidade 1">
+        </div>
+        <div class="gallery-item animals">
+            <img src="./img/animal1.png" alt="Animais 1">
+        </div>
+        <div class="gallery-item nature">
+            <img src="./img/natureza2.png" alt="Natureza 2">
+        </div>
+        <div class="gallery-item city">
+            <img src="./img/cidade2.png" alt="Cidade 2">
+        </div>
+        <div class="gallery-item animals">
+            <img src="./img/animal2.png" alt="Animais 2">
+        </div>
+        <div class="gallery-item nature">
+            <img src="./img/natureza3.png" alt="Natureza 3">
+        </div>
+        <div class="gallery-item city">
+            <img src="./img/cidade3.png" alt="Cidade 3">
+        </div>
+        <div class="gallery-item animals">
+            <img src="./img/animal3.png" alt="Animais 3">
+        </div>
+    </div>
+    <script>
+        function filterGallery(category) {
+            let items = document.querySelectorAll('.gallery-item');
+            if (category === 'all') {
+                items.forEach(item => {
+                    item.classList.add('show');
+                });
+            } else {
+                items.forEach(item => {
+                    if (item.classList.contains(category)) {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.remove('show');
+                    }
+                });
+            }
+        }
+
+        // Mostrar todos os itens por padrão
+        filterGallery('all');
+    </script>
+</body>
+</html>

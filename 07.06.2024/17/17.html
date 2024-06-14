@@ -1,0 +1,53 @@
+<!-- Leonardo Lopes do Nascimento -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Login Simples</title>
+<link rel="stylesheet" href="17.css">
+</head>
+<body>
+<div class="login-container">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <label for="username">Usuário:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Entrar</button>
+  </form>
+  <p id="message"></p>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    if (localStorage.getItem('loggedIn') === 'true') {
+      document.getElementById('message').innerText = 'Você já está logado.';
+    }
+  
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+  
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+  
+      const correctUsername = 'admin';
+      const correctPassword = '1234';
+  
+      if (username === correctUsername && password === correctPassword) {
+        localStorage.setItem('loggedIn', 'true');
+        document.getElementById('message').innerText = 'Login bem-sucedido!';
+        document.getElementById('message').style.color = 'green';
+      } else {
+        localStorage.setItem('loggedIn', 'false');
+        document.getElementById('message').innerText = 'Usuário ou senha incorretos.';
+        document.getElementById('message').style.color = 'red';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+

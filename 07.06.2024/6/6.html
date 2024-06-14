@@ -1,0 +1,40 @@
+<!-- Leonardo Lopes do Nascimento -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="6.css" >
+  <title>Seção de Comentários</title>
+</head>
+<body>
+  <h2>Seção de Comentários</h2>
+  <form id="commentForm">
+    <label for="comment">Comentário:</label>
+    <input type="text" id="comment" name="comment">
+    <button type="button" onclick="addComment()">Adicionar Comentário</button>
+  </form>
+
+  <div class="comments" id="commentList">
+    <!-- Comentários serão adicionados aqui -->
+  </div>
+
+  <script>
+    function addComment() {
+      // Obter o texto do campo de comentário
+      var commentText = document.getElementById("comment").value;
+      
+      // Criar um novo elemento de parágrafo para o comentário
+      var commentNode = document.createElement("p");
+      var commentContent = document.createTextNode(commentText);
+      commentNode.appendChild(commentContent);
+      
+      // Adicionar o comentário à lista de comentários
+      document.getElementById("commentList").appendChild(commentNode);
+      
+      // Limpar o campo de comentário
+      document.getElementById("comment").value = "";
+    }
+  </script>
+</body>
+</html>
